@@ -9,13 +9,27 @@ package cn.bugstack.springframework.test.bean;
  * @since JDK 8
  */
 public class UserService {
-	private String name;
+	private String uId;
 
-	public UserService(String name) {
-		this.name = name;
+	private UserDao userDao;
+
+	public UserService() {
+	}
+
+	public UserService(String uId, UserDao userDao) {
+		this.uId = uId;
+		this.userDao = userDao;
 	}
 
 	public void queryUserInfo() {
-		System.out.println("查询用户信息");
+		System.out.println("查询用户信息:" + userDao.queryUserName(uId));
+	}
+
+	@Override
+	public String toString() {
+		return "UserService{" +
+				"uId='" + uId + '\'' +
+				", userDao=" + userDao +
+				'}';
 	}
 }

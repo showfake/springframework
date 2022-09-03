@@ -8,30 +8,12 @@ package cn.bugstack.springframework.beans;
  * @author ShowFaker
  * @since JDK 8
  */
-public class BeansException extends Exception {
-	private String describe;
-
-	public BeansException(String describe) {
-		this.describe = describe;
+public class BeansException extends RuntimeException {
+	public BeansException(String msg) {
+		super(msg);
 	}
 
-	public BeansException(String message, String describe) {
-		super(message);
-		this.describe = describe;
-	}
-
-	public BeansException(String message, Throwable cause, String describe) {
-		super(message, cause);
-		this.describe = describe;
-	}
-
-	public BeansException(Throwable cause, String describe) {
-		super(cause);
-		this.describe = describe;
-	}
-
-	public BeansException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, String describe) {
-		super(message, cause, enableSuppression, writableStackTrace);
-		this.describe = describe;
+	public BeansException(String msg, Throwable cause) {
+		super(msg, cause);
 	}
 }

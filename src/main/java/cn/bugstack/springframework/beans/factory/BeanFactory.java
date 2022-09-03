@@ -1,10 +1,6 @@
 package cn.bugstack.springframework.beans.factory;
 
 import cn.bugstack.springframework.beans.BeansException;
-import cn.bugstack.springframework.beans.factory.BeanDefinition;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * ClassName: BeanFactory
@@ -16,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public interface BeanFactory {
 
-	public Object getBean(String name) throws BeansException;
+	Object getBean(String name) throws BeansException;
 
-	public Object getBean(String name, Object... args) throws BeansException;
+	Object getBean(String name, Object... args) throws BeansException;
 }

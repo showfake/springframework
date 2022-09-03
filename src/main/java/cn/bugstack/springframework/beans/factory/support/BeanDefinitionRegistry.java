@@ -1,6 +1,6 @@
 package cn.bugstack.springframework.beans.factory.support;
 
-import cn.bugstack.springframework.beans.factory.BeanDefinition;
+import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
 
 /**
  * ClassName: BeanDefinitionRegistry

@@ -1,7 +1,10 @@
 package cn.bugstack.springframework.beans.factory.support;
 
 import cn.bugstack.springframework.beans.BeansException;
-import cn.bugstack.springframework.beans.factory.BeanDefinition;
+import cn.bugstack.springframework.beans.factory.config.BeanDefinition;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +17,7 @@ import java.util.Map;
  * @author ShowFaker
  * @since JDK 8
  */
+@Slf4j
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry {
 
 	private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();

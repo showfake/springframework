@@ -1,4 +1,8 @@
-package cn.bugstack.springframework.beans.factory.config;
+package cn.bugstack.springframework.beans.factory.support;
+
+import cn.bugstack.springframework.beans.factory.config.SingletonBeanRegistry;
+import jdk.nashorn.internal.runtime.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,9 +15,10 @@ import java.util.Map;
  * @author ShowFaker
  * @since JDK 8
  */
+@Slf4j
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
-	private Map<String, Object> singletonObjects = new HashMap<>();
+	private static Map<String, Object> singletonObjects = new HashMap<>();
 
 	@Override
 	public Object getSingleton(String beanName) {
